@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Js-Task-7</title>
+    <style type="text/css">
+        body{
+
+            background-color: black;
+            color: white;
+        }
+        legend{
+
+            border:5px solid white;
+            padding: 5px;
+        }
+        h2{
+            background-color: blue;
+            padding: 5px;
+
+        }
+        input {
+            
+            background: #A1ABB5;
+            transition: all 0.3s;
+            display: inline-block;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #888;
+            color: #666;
+            font-size: 25px;
+            margin: 10px 0;
+            line-height: 45px;
+        }
+        
+        
+        input:focus {
+            color: #222;
+            background: #97ABBE;
+            border-color: #999;
+        }
+        
+        input:valid {
+            box-shadow: 0 0 2px rgba(0, 255, 0, 0.4);
+        }
+        
+        input:valid:focus {
+            background: #80BE93;
+            box-shadow: none;
+        }
+        
+        input:invalid {
+            box-shadow: 0 0 2px rgba(255, 0, 0, 0.4);
+        }
+        
+        input:invalid:focus {
+            background: #CB9089;
+            box-shadow: none;
+        }
+        #submit{
+            margin-left: 5%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <center><legend>
+        <form name="myform" method="post" action="Flight reservation form.html" onsubmit="return valid();">
+            <legend><h2>Login</h2></legend>
+                        <br>
+            Username:
+            <input type="text" id='Name' size="25">
+            <br>
+                        
+            <br> Enter Email:
+            <input type='text' id='Email' size="28" />
+            
+            <br>
+            <br>
+            
+            <input type="reset"  value="Clear" />
+            <input type='submit' id="submit" value="submit">
+        </form></legend>
+    </center>
+
+    <script type="text/javascript">
+        function valid() {
+            var name = document.getElementById('Name');
+            var nameRE = /^[\w][\w\@_-]{2,}$/;
+            
+            var email = document.getElementById('Email');
+            var emailRE = /^([\w_\.\-])+\@(([\w\-])+\.)+([\w]{2,4})+$/;    
+                
+
+
+            
+
+            if (!nameRE.test(name.value)) {
+                alert('Please provide a valid Username');
+                name.focus;
+                return false;
+            }
+
+            if (!emailRE.test(email.value)) {
+                alert('Please provide a valid email address');
+                email.focus;
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+

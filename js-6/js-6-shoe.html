@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Js-6</title>
+
+		
+		</head>
+		<body>
+			<script>
+
+				var shoe = {size:6, gender:"woman",construction:"slipper"};
+				var magicShoe = Object.create( shoe );
+				var boots = Object.create(shoe);
+				var sneakers = Object.create(shoe);
+				var sandals = Object.create(shoe);
+
+				magicShoe.jewels = "ruby";
+				magicShoe.travelAction = "click heels";
+				magicShoe.actionsRequired = 3;
+
+				
+
+				boots.material = "lether";
+				boots.travelAction ="click heels";
+				boots.actionsRequired = 5;
+
+				sneakers.material = "lether";
+				sneakers.travelAction ="click heels";
+				sneakers.actionsRequired = 6;
+
+				sandals.material = "lether";
+				sandals.travelAction ="click heels";
+				sandals.actionsRequired = 7;
+
+				
+				console.log(shoe.isPrototypeOf(magicShoe));
+
+				console.log(shoe.isPrototypeOf(boots));
+
+				console.log(shoe.isPrototypeOf(sneakers));
+
+				console.log(shoe.isPrototypeOf(sandals));
+				
+				console.log(shoe);
+				console.log(magicShoe);
+				console.log(boots);
+				console.log(sneakers);
+				console.log(sandals);
+
+				
+				function shoes(size, gender,construction){
+
+						this.size = size;
+						this.gender = gender;
+						this.construction = construction;
+						
+					}
+
+					
+					shoes.prototype.price = "850rs";
+					shoes.prototype.quantity = 3;
+
+					var shoe1 = new shoes(8,"male","slipper");
+					
+
+					
+
+					document.write("size:"+ shoe1.size + "<br/>" +"gender:"+shoe1.gender + "<br/>" +"construction:"+shoe1.construction +"<br/>" +"price:"+ shoe1.price + "<br/>"+"quantity:"+ shoe1.quantity + "<br/>");
+
+
+				class Animal{
+
+					constructor(name,color,sound){
+
+						this.name = name;
+						this.color = color;
+						this.sound = sound;
+
+
+					}
+					result(){
+						
+						
+						console.log(this.name,this.color,this.sound);
+						console.log(constructor.prototype.place = "kakinada");
+						console.log(constructor.prototype.price = "500rs");
+
+					}
+					
+				};
+
+				var cat = new Animal ('cat','white','mieow miew');
+				var dog = new  Animal('doggy','brown','bow bow');
+				var rabbit = new  Animal('rabbit','white','squeak');
+
+				
+				cat.result();
+				rabbit.result();
+				dog.result();
+
+
+
+
+					class shop{
+						
+						constructor(size, gender,construction){
+
+							this.size = size;
+							this.gender = gender;
+							this.construction = construction;
+						}
+						result(){
+							console.log(this.size,this.gender,this.construction);
+							console.log(constructor.prototype.price = "3000rs");
+							console.log(constructor.prototype.quantity = 3);
+						}
+					};
+
+
+					
+					var slipper = new shop(8,"male","slipper");
+					var slipper1 = new shop(9,"male","slipper");
+					var slipper2 = new shop(10,"female","slipper");
+					var slipper3 = new shop(11,"male","slipper");
+					var slipper4 = new shop(12,"female","slipper");
+					var slipper5 = new shop(10,"male","slipper");
+
+
+					slipper.result();
+					slipper1.result();
+					slipper2.result();
+					slipper3.result();
+					slipper4.result();
+
+					
+
+
+
+
+
+					
+
+				
+			</script>
+		</body>
+	</html>

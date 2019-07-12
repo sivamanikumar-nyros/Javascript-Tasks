@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Movie Ticket Prices</title>
+<script type="text/javascript">
+
+function printPrice() {
+ var movie = document.getElementById("movie").value;
+ var name = document.getElementById("textbox").value;
+ var price = getRBtnName('tickets') * 1;
+ var quantity = document.getElementById("quantity").value * 1;
+ var total = 0;
+ var sentence = "";
+ for (var i = 1; i<=quantity; i++) {
+  sentence += name + " purchased ticket \"";
+  sentence += movie + "\" for Rs";
+  sentence += price;
+  total += price;
+  sentence += "<br>";
+ }
+ sentence += 'Total cost: Rs'+total;
+ document.getElementById("inserts").innerHTML=sentence;
+}
+
+function getRBtnName(GrpName) {
+  var sel = document.getElementsByName(GrpName);
+  var fnd = -1;
+  var str = '';
+  for (var i=0; i<sel.length; i++) {
+    if (sel[i].checked == true) { str = sel[i].value;  fnd = i; }
+  }
+
+  return str;
+} 
+
+</script>
+</head>
+<body>
+<form name="form1">
+
+<div> Choose a movie: 
+<select name="movie" id="movie">
+ <option value="Ramayanam">Ramayanam</option>
+ <option value="Bharatham">Bharatham</option>
+ <option value="Lavakusa">Lavakusa</option>
+ <option value="Annamayya">Annamayya</option>
+ <option value="Sriramadasu">Sriramadasu</option>
+ <option value="Jai sriram">Jai sriram</option>
+</select>
+</div>
+<br/>
+<div>
+ Name: <input type="text" name="textbox" id="textbox" value="" />
+</div>
+<br/>
+<div>
+ <label> <input type="radio" name="tickets" value="50" />Child </label>
+ <label> <input type="radio" name="tickets" value="80" checked />Adult </label>
+</div>
+<br/>
+<div>
+ How many: <input type="text" name="quantity" id="quantity" value="2" size="3" />
+ <input type="button" value="Purchase" onclick="printPrice()" />
+</div>
+</form>
+
+<div id="inserts"> </div>
+</body>
+</html> 

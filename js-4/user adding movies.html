@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>user adding movies</title>
+		</head>
+		<body>
+			<h1>You are successfully added this following movies:</h1>
+				<script>
+
+					var movies=new Array(5);
+
+					for(i=0;i<5;i++){
+						movies[i]=prompt("add some movies to list:","");
+					}
+
+					var list1=movies.join("<br/>")
+					document.write(list1);
+				</script>
+		</body>
+	</html>

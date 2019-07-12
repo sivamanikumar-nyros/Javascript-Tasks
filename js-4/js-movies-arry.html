@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Movies Info...</h2>
+    <h3>Movies names...</h3>
+    <p id="demo"></p>
+    <button onclick="myFunction()">click</button>
+
+    <h3>Movies Duration...</h3>
+    <p id="demo1"></p>
+    <button onclick="myFunction1()">click</button>
+
+    <h3>Adding: Movies Duration...</h3>
+    <p id="demo2"></p>
+    <button onclick="myFunction2()">click</button>
+
+    <h3>Adding:movie...</h3>
+    <p id="demo3"></p>
+    <button onclick="myFunction3()">click</button>
+
+    <h3>Finding number of movies in the array...</h3>
+    <p id="demo4"></p>
+    <button onclick="myFunction4()">click</button>
+
+    <h2>IN this case i entered fruits list but in this list i enterd wrong item that is cat so i want to delete it... </h2>
+    <button onclick="myFunction6()">click</button>
+
+    <script>
+        function myFunction() {
+
+            var movies = ["Annamayya", "Sriramadasu", "Lavakusa", "Jaisriram", "Durga", "Devi"];
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+        function myFunction1() {
+
+            var duration = ["2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00"];
+            var text = "";
+            var i;
+            for (i = 0; i < duration.length; i++) {
+                text += duration[i] + "<br>";
+            }
+            document.getElementById("demo1").innerHTML = text;
+        }
+
+        function myFunction2() {
+
+            var duration = ["2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00"];
+
+            duration.splice(3, 1, "3:00:00", "59:00");
+
+            var text = "";
+            var i;
+            for (i = 0; i < duration.length; i++) {
+                text += duration[i] + "<br>";
+            }
+            document.getElementById("demo2").innerHTML = text;
+        }
+
+        function myFunction3() {
+
+            var movies = ["Annamayya", "Sriramadasu", "Lavakusa", "Jaisriram", "Durga", "Devi"];
+
+            movies.splice(2, 0, "Siva", "Ram");
+
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo3").innerHTML = text;
+        }
+
+        function myFunction4() {
+
+            var movies = ["Annamayya", "Sriramadasu", "Lavakusa", "Jaisriram", "Durga", "Devi"];
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo4").innerHTML = (movies.length);
+        }
+
+        function myFunction6() {
+            var my_array = ["Apple", "Banana", "Pineapple", "Cat", "Watermellon"];
+            var start_index = 3
+            var number_of_elements_to_remove = 1;
+            var removed_elements = my_array.splice(start_index, number_of_elements_to_remove);
+            window.alert(removed_elements);
+            window.alert(my_array);
+
+        }
+    </script>
+
+</body>
+
+</html>

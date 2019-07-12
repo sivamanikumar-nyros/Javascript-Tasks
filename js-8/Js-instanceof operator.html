@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Js-instanceof operator</title>
+		</head>
+		<body>
+			<script type="text/javascript">
+				
+			function Students(name,roll_number,branch,section){
+
+				this.name= name;
+				this.roll_number = roll_number;
+				this.branch = branch;
+				this.section = section;
+			}
+			var Class = new Students('Sonu',1,'Cse','A');
+			alert(Class instanceof Students);
+
+			</script>
+
+		</body>
+	</html>

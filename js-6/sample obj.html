@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+Allegiance: <input type ="text" id = "allegiance"><br/><br/>
+Armor:  <input type ="text" id = "armor"><br/><br/>
+Weapon(s): <input type ="text" id = "weapon"><br/><br/>
+<input type = "button" id="button" onclick="hire()" value = "Submit"><br/>
+<p id="output"></p>
+
+
+
+<script type="text/javascript">
+	
+var soldiers = [];
+
+function Soldier(allegiance, armor, weapon){
+  this.allegiance = allegiance;
+  this.armor = armor;
+  this.weapon = weapon;
+  this.doReport = function () {
+    return this.armor + ' and ' + this.weapon;
+  }
+}
+
+function doReport() {
+   output = "";
+   for(var i = 0; i < soldiers.length; i++) {
+      output += (i + 1) + ") " + soldiers[i].doReport() + "; ";
+   }
+   document.getElementById("output").innerHTML = output;
+}
+
+function hire() {
+  var soldier =  new Soldier(
+    document.getElementById("allegiance").value, 
+    document.getElementById("armor").value, 
+    document.getElementById("weapon").value
+  );
+  soldiers.push(soldier);
+  doReport();
+}
+
+
+</script>
+</body>
+</html>

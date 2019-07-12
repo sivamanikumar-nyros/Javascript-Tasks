@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+  #siva{
+    text-align: center;
+    border:5px solid grey;
+    
+  }
+  fieldset{
+    border:5px solid grey;
+  }
+  input,textarea,select{
+    border-width:1px;
+    background-color: lightblue;
+    border-color: black;
+    display:inline-block;
+  }
+  h4{
+    border:5px solid grey ;
+    border-width:10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+    color: white;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+  }
+  body{
+    background-color: #15c17c;
+  }
+  button{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  legend{
+    text-align: center;
+  }
+  
+
+</style>
+</head>
+<body>
+  <form name="form1" id="siva" onsubmit="myResult();">
+  <fieldset>
+  <legend>Flight Reservation Form</legend>
+    <h1>Flight Reservation Form</h1>
+    <h4>Passenger Name</h4>
+    <p><select type="text" value="" name="Subject">
+      <option value="Title">Title</option>
+      <option value="Ms">Ms</option>
+      <option value="Miss">Miss</option>
+      <option value="Mrs">Mrs</option>
+      <option value="Mr">Mr</option>
+    </select>
+    
+    <input id="First" type="text" placeholder="First" name="First" />
+    <input id="Last" type="text" size="22" placeholder="Last" name="Last"/><br/><br/></p>
+    <h4>Date of Birth</h4>
+    <input type="date"  name="bday">
+
+    <br/><br/>
+    <h4>Contact Person</h4>
+    <select>
+      <option value="Title">Title</option>
+      <option value="Ms">Ms</option>
+      <option value="Miss">Miss</option>
+      <option value="Mrs">Mrs</option>
+      <option value="Mr">Mr</option>
+    </select>
+
+    <input id="First" type="text" size="20" placeholder="First" />
+    <input id="Last" type="text" size="22" placeholder="Last" /><br/><br/>
+
+    <h4>Email</h4>
+    <input id="Email" type="text" size= "50" placeholder="example@gmail.com" />
+    <br/><br/>
+
+    <h4>Phone</h4>
+    <input id="Phone" type="text" size="50" placeholder="Phonenumber" />
+    <br/><br/>
+
+    <h4>Address</h4><br/>
+    <textarea rows="2" cols="50">
+    Street Address
+    </textarea>
+    <br/><br/>
+    <textarea rows="2" cols="50">
+    Street Address Line2
+    </textarea>
+
+    <br/><br/>
+    <input id="City" type="text" placeholder="City" />
+    <input id="Region" type="text"  placeholder="Region" />
+    <br/><br/>
+    <input id="Postal/Zipcode" type="text" placeholder="Postal/Zipcode" />
+    <select>
+      <option value="Country">Country</option>
+      <option value="India">India</option>
+      <option value="Austrelia">Austrelia</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="cuba">cuba</option>
+    </select>
+    <br/></br>
+    <h4>Departure Date</h4>
+    <input type="date" name="Departure Date">
+
+    <br/></br>
+    <h4>Departure Time</h4>
+    <input type="Time" name="Departure Time">
+
+    <br/></br>
+    <h4>Return Date</h4>
+    <input type="date" name="Return Date">
+
+    <br/></br>
+    <h4>Return Time</h4>
+    <input type="Time" name="Return Time">
+
+    <br/><br/>
+    <h4>Departing From</h4>
+    <input id="City" type="text" placeholder="City" />
+    <select>
+      <option value="Country">Country</option>
+      <option value="India">India</option>
+      <option value="Austrelia">Austrelia</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="cuba">cuba</option>
+    </select>
+    
+
+    <br/><br/>
+    <h4>Destination</h4>
+    <input id="City" type="text" placeholder="City" />
+    <select>
+      <option value="Country">Country</option>
+      <option value="India">India</option>
+      <option value="Austrelia">Austrelia</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="cuba">cuba</option>
+    </select>
+    <br/><br/>
+    <h4>Airline</h4>
+    <select>
+      <option value="Airline">Airline</option>
+      <option value="Airline1">Airline1</option>
+      <option value="Airline2">Airline2</option>
+      <option value="Airline3">Airline3</option>
+      <option value="Airline4">Airline4</option>
+    </select>
+
+     <br/><br/>
+     <h4>Fare</h4>
+    <select>
+      <option value="Fare">Fare</option>
+      <option value="OneWay">OneWay</option>
+      <option value="Roundtrip">Roundtrip</option>
+      
+    </select>
+    <br/><br/>
+    <h4>Confirmation to reserve flight</h4>
+    <input type="submit" value="Submit">  
+  </fieldset>
+  </form>
+  
+  
+  <script>
+function Result()                                   
+{
+    var what = document.forms["form1"][""];
+    var first = document.forms["form1"]["First"];
+    var last = document.forms["form1"]["Last"];              
+    var email = document.forms["form1"]["EMail"];   
+    var phone = document.forms["form1"]["Telephone"]; 
+    var what =  document.forms["form1"]["Subject"]; 
+    var password = document.forms["form1"]["Password"]; 
+    var address = document.forms["form1"]["Address"]; 
+  
+    function myFunction(){
+      if (what.selectedIndex < 1){
+        alert("Please select yout title.");
+        what.focus();
+        return false;
+    }
+    return true;
+
+    }
+    function myFunction1(){
+    if (first.value == "")                                 
+    {
+        window.alert("Please enter your first name.");
+        first.focus();
+        return false;
+    }
+    return true;
+  }
+
+function myFunction2(){
+    if (last.value == "")                                 
+    {
+        window.alert("Please enter your second name.");
+        last.focus();
+        return false;
+    }
+  }
+  function myResult(){
+      myFunction();
+      myFunction1();
+      myFunction2();
+
+  }
+
+  
+//     if (address.value == "")                              
+//     {
+//         window.alert("Please enter your address.");
+//         name.focus();
+//         return false;
+//     }
+      
+//     if (email.value == "")                                  
+//     {
+//         window.alert("Please enter a valid e-mail address.");
+//         email.focus();
+//         return false;
+//     }
+  
+//     if (email.value.indexOf("@", 0) < 0)                
+//     {
+//         window.alert("Please enter a valid e-mail address.");
+//         email.focus();
+//         return false;
+//     }
+  
+//     if (email.value.indexOf(".", 0) < 0)                
+//     {
+//         window.alert("Please enter a valid e-mail address.");
+//         email.focus();
+//         return false;
+//     }
+  
+//     if (phone.value == "")                          
+//     {
+//         window.alert("Please enter your telephone number.");
+//         phone.focus();
+//         return false;
+//     }
+  
+//     if (password.value == "")                       
+//     {
+//         window.alert("Please enter your password");
+//         password.focus();
+//         return flase;
+//     }
+  
+//     if (what.selectedIndex < 1)                 
+//     {
+//         alert("Please enter your course.");
+//         what.focus();
+//         return false;
+//     }
+  
+//     return true;
+// }
+</script>
+  <!-- <script>
+    var titles  = [];
+var names   = [];
+var numbers = [];
+var tickets = [];
+
+
+var titleInput  = document.getElementById("title");
+var nameInput   = document.getElementById("name");
+var numberInput   = document.getElementById("number");
+var ticketInput = document.getElementById("tickets");
+
+var messageBox  = document.getElementById("display");
+
+function insert ( ) {
+ titles.push( titleInput.value );
+ names.push( nameInput.value );
+ numbers.push( numberInput.value );
+ tickets.push( ticketInput.value );
+  
+ clearAndShow();
+}
+
+function clearAndShow () {
+  
+  titleInput.value = "";
+  nameInput.value = "";
+  numberInput.value = "";
+  ticketInput.value = "";
+  
+  messageBox.innerHTML = "";
+  
+  messageBox.innerHTML += "Transport_type: " + titles.join(",") + "<br/>";
+  messageBox.innerHTML += "Name: " + names.join(", ") + "<br/>";
+  messageBox.innerHTML += "Contact_number: " + numbers.join(", ") + "<br/>";
+  messageBox.innerHTML += "No_of_Tickets: " + tickets.join(",<br/> ");
+
+  
+
+}
+function Result(){
+
+    clearAndShow();
+
+}
+
+
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+document.write(makeid());
+  </script> -->
+</body>
+</html>

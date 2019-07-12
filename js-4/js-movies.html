@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+    table {
+        border: 5px solid black;
+        background-color: grey;
+        color: black;
+        width: 100%;
+        text-align: center;
+    }
+    
+    th {
+        border: 5px solid black;
+    }
+    
+    td {
+        border: 3px solid black;
+        padding: 10px;
+    }
+    
+    button {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 2%;
+        background-color: blue;
+        color: white;
+        border-color: red;
+    }
+</style>
+
+<body>
+
+    <h1>This is Arrays and functions and looping used movies info demo...</h1>
+    <h2>Please click to see the movie details..</h2>
+    <button onclick="myFunction()">click</button>
+    <table>
+        <th>Movie_names</th>
+        <th>Duration</th>
+        <th>Adding_duration</th>
+        <th>Adding_movies</th>
+        <th>Finding length of the movies</th>
+        <th>Price</th>
+        <tbody>
+            <tr>
+                <td id="demo"></td>
+                <td id="demo1"></td>
+                <td id="demo2"></td>
+                <td id="demo3"></td>
+                <td id="demo4"></td>
+                <td id="demo5"></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function myFunction() {
+
+            var movies = ["Annamayya", "Sriramadasu", "Lavakusa", "Jaisriram", "Durga", "Devi"];
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = text;
+
+            var duration = ["2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00"];
+            var text = "";
+            var i;
+            for (i = 0; i < duration.length; i++) {
+                text += duration[i] + "<br>";
+            }
+            document.getElementById("demo1").innerHTML = text;
+
+            var duration = ["2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00", "2:00:00"];
+
+            duration.splice(3, 1, "3:00:00", "59:00");
+
+            var text = "";
+            var i;
+            for (i = 0; i < duration.length; i++) {
+                text += duration[i] + "<br>";
+            }
+            document.getElementById("demo2").innerHTML = text;
+
+            var movies = ["Annamayya", "Sriramadasu", "Lavakusa", "Jaisriram", "Durga", "Devi"];
+
+            movies.splice(2, 0, "Siva", "Ram");
+
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo3").innerHTML = text;
+
+            var movies = ["Annamayya", "Sriramadasu", "Lavakusa", "Jaisriram", "Durga", "Devi"];
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo4").innerHTML = (movies.length);
+
+            var movies = ["price:100rs", "price:100rs", "price:100rs", "price:100rs", "price:100rs", "price:100rs"];
+            var text = "";
+            var i;
+            for (i = 0; i < movies.length; i++) {
+                text += movies[i] + "<br>";
+            }
+            document.getElementById("demo5").innerHTML = text;
+
+        }
+
+        var movies = [{
+                moviename: "Sriramadasu",
+                duration: "duration:2:00:00",
+                waittime: "waittime:5minutes",
+                price: "100rs price"
+            }, {
+                moviename: "Annamayya",
+                duration: "duration:2:00:00",
+                waittime: "waittime:5minutes",
+                price: "100rs price"
+            }, {
+                moviename: "Lavakusa",
+                duration: "duration:2:00:00",
+                waittime: "waittime:5minutes",
+                price: "100rs price"
+            }, {
+                moviename: "Devi",
+                duration: "duration:2:00:00",
+                waittime: "waittime:5minutes",
+                price: "100rs price"
+            }, {
+                moviename: "Durga",
+                duration: "duration:2:00:00",
+                waittime: "waittime:5minutes",
+                price: "100rs price"
+            },
+
+        ];
+
+        function getFullName(item, index, time, rate) {
+            var fullname = [item.moviename, item.duration, item.waittime, item.price].join(" ");
+            return fullname;
+        }
+
+        function myFunction7() {
+            document.getElementById("demo7").innerHTML = movies.map(getFullName);
+        }
+    </script>
+
+</body>
+
+</html>

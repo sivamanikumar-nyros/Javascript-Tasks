@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+    <html>
+            <style type="text/css">
+                table{
+                    border:5px solid black;
+                    background-color: grey;
+                    color: black;
+                    width:500px;
+                    margin-top: 3%;
+                }
+                th{
+                    border:5px solid black;
+                }
+                td{
+                    border:3px solid black;
+                    padding: 10px;
+                }
+               
+
+                
+
+                
+            </style>
+        <body>
+            <header style="background-color: green;text-align: center;color: white">
+                <h1>JavaScript While , do while , for loops demo</h1></header>
+
+                <h2>While loop statement ++ operator using</h2>
+                
+                <button onclick="myFunction()">Click Me</button>
+                
+                <p id="demo"></p>
+                <hr>
+                <h2>While loop statement -- operator using</h2>
+                
+                <button onclick="myFunction1()">Click Me</button>
+                
+                <p id="demo1"></p>
+                <hr>
+                <h2>do While loop statement ++ operator using</h2>
+
+                <h2>In this case i applied wrong condition (var i = 10;) while (i <= 5) { so the output will displayed in one time and then automatically stopped its looping...</h2>
+                
+                <button onclick="doFunction()">Click Me</button>
+                
+                <p id="do"></p>
+                <hr>
+                <h2>for loop statement ++</h2>
+                
+                <button onclick="myFunction3()">click</button>
+                
+                <p id="demo3"></p>
+                <hr>
+                <h2>for loop statement --</h2>
+                
+                <button onclick="myFunction4()">click</button>
+                
+                <p id="demo4"></p>
+                <hr>
+                <h2>The operational and non operational trains</h2>
+                <p>Click this below button to see the train details:</p>
+                
+                <button onclick="myFunction5()">train details</button>
+
+                <table>
+                    <th>Operational trains</th>
+                    <th>Non-operational trains</th>
+                        <tbody>
+                            <tr>
+                                <td id="demo5"></td> 
+                                <td id="demo6"></td>
+                            </tr>
+                        </tbody>
+                </table>
+
+                <hr>
+                <h2>The student details</h2>
+                <p>Click this below button to see the student details:</p>
+                
+                <button onclick="myFunction7()">Students details</button>
+
+                <table>
+                    <th>The Student Details</th>
+                        <tbody>
+                            <tr>
+                                <td id="demo7"></td> 
+                            </tr>
+                        </tbody>
+                </table>
+                
+                <hr>
+                <script>
+                    
+                    function myFunction() {
+                        var text = "";
+                        var i = 1;
+                        while (i <= 5) {
+                            text += "<br>The number is " + i;
+                            i++;
+                        }
+                        document.getElementById("demo").innerHTML = text;
+                    }
+                    
+                    function myFunction1() {
+                        var text = "";
+                        var i = 5;
+                        while (i >= 1) {
+                            text += "<br>The number is " + i;
+                            i--;
+                        }
+                        document.getElementById("demo1").innerHTML = text;
+                    }
+                    
+                    function doFunction() {
+                        var text = "";
+                        var i = 10;
+                        do {
+                            text += "<br>The number is " + i;
+                            i++;
+                        }
+                        while (i <= 5) {
+                            document.getElementById("do").innerHTML = text;
+                        }
+                    }
+                    
+                    function myFunction3() {
+                        var text = "";
+                        var i;
+                        for (i = 0; i < 5; i++) {
+                            text += "The number is " + i + "<br>";
+                        }
+                        document.getElementById("demo3").innerHTML = text;
+                    }
+                    
+                    function myFunction4() {
+                        var text = "";
+                        var i;
+                        for (i = 5; i >= 1; i--) {
+                            text += "The number is " + i + "<br>";
+                        }
+                        document.getElementById("demo4").innerHTML = text;
+                    }
+                    
+                    function myFunction5() {
+                        var text = "";
+                        var texts = "";
+                        var operationaltrain;
+                        var nonoperationaltrain;
+                        for (operationaltrain = 1; operationaltrain <= 8; operationaltrain++) {
+                            text += "The operational train:" + operationaltrain + ", " + "\t";
+                        }
+                        document.getElementById("demo5").innerHTML = text;
+                        for (nonoperationaltrain = 9; nonoperationaltrain <= 15; nonoperationaltrain++) {
+                            texts += "The non operational train:" + nonoperationaltrain + ", " + "\t";
+                        }
+                        document.getElementById("demo6").innerHTML = texts;
+                    }
+                    
+                    function myFunction7() {
+                        var text = "";
+                        var students;
+                        for (students = 1; students <= 45; students++) {
+                            text += "Student " + students + ", " + "\t";
+                        }
+                        document.getElementById("demo7").innerHTML = text;
+                    }
+                </script>
+            
+            <footer style="background-color: green;text-align: center;color: white">
+                <h1>JavaScript Looping Concepts....Demo</h1>
+            </footer>
+        </body>
+    </html>

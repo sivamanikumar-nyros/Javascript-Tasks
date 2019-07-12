@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        button {
+            background: red;
+            width: 150px;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+        
+        input[type=text] {
+            position: static;
+            display: block;
+            width: 380px;
+            margin: 5px auto;
+            font-size: 1em;
+            padding: 20px;
+        }
+        
+        table {
+            margin-top: 3%;
+        }
+        
+        body {
+            background-color:blue;
+        }
+    </style>
+    <script>
+        function siva(x) {
+            document.getElementById("form").value += x;
+        }
+
+        function mani() {
+            var x = document.getElementById("form").value;
+            document.getElementById("form").value = eval(x);
+        }
+
+        function Clear() {
+            document.getElementById('form').value = "";
+            document.getElementById('form').value = "";
+            document.getElementById('form').value = "";
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <center>
+        <table border="1">
+            <tr>
+                <th colspan=6>
+                    <h1 style="color: white;">JavaScript Calculator</h1></th>
+            </tr>
+            <tr>
+                <td colspan=6>
+                    <input type="text" id="form" placeholder="0" style="text-align:right;" />
+                </td>
+
+            </tr>
+            <tr>
+
+                <td>
+                    <button type="button" value="%" onclick="siva(this.value)">%</button>
+                </td>
+                <td>
+                    <button type="button" value="/" onclick="siva(this.value)">/</button>
+                </td>
+                <td>
+                    <button type="button" value="*" onclick="siva(this.value)">*</button>
+                </td>
+                <td>
+                    <button type="button" value="-" onclick="siva(this.value)">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="7" onclick="siva(this.value)">7</button>
+                </td>
+                <td>
+                    <button type="button" value="8" onclick="siva(this.value)">8</button>
+                </td>
+                <td>
+                    <button type="button" value="9" onclick="siva(this.value)">9</button>
+                </td>
+                <td>
+                    <button type="button" value="+" onclick="siva(this.value)">+</td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="4" onclick="siva(this.value)">4</button>
+                </td>
+                <td>
+                    <button type="button" value="5" onclick="siva(this.value)">5</button>
+                </td>
+                <td>
+                    <button type="button" value="6" onclick="siva(this.value)">6</button>
+                </td>
+                <td>
+                    <button type="button" value="Clear" onclick="Clear()">Clear</button>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="1" onclick="siva(this.value)">1</button>
+                </td>
+                <td>
+                    <button type="button" value="2" onclick="siva(this.value)">2</button>
+                </td>
+                <td>
+                    <button type="button" value="3" onclick="siva(this.value)">3</button>
+                </td>
+                <td>
+                    <button type="button" style="height:50px" onclick="mani()">=</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <button type="button" style="width:100%" value="0" onclick="siva(this.value)">0</button>
+                </td>
+                <td colspan=2>
+                    <button type="button" style="width:100%" value="." onclick="siva(this.value)">.</button>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

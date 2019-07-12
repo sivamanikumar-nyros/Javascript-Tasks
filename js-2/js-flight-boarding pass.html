@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script type="text/javascript">
+       
+        function results() {
+            var name = document.getElementById('name').value;
+            var from = document.getElementById('from').value;
+            var To = document.getElementById('To').value;
+            var Gate = document.getElementById('Gate').value;
+            var Boardingtill = document.getElementById('Boardingtill').value;
+            var flight = document.getElementById('flight').value;
+            var Data = document.getElementById('Date').value;
+            var Time = document.getElementById('Time').value;
+
+              
+            document.write("<h1>Thank You..</h1>");
+            document.write("<p>Now, your data will send via mail</p>");
+            document.write("<h2>Here is your data..</h2>");
+
+            document.write(Name of the passenger + "<br/>");
+            document.write(From + "<br/>");
+            document.write(To + "<br/>");
+            document.write(Gate + "<br/>");
+            document.write(Boardingtill + "<br/>");
+            document.write(flight + "<br/>");
+            document.write(Date + "<br/>");
+            document.write(Time + "<br/>");
+
+        }
+
+        
+
+        function printDiv(divName) {
+
+ var printContents = document.getElementById(divName).innerHTML;
+ w=window.open();
+ w.document.write(printContents);
+ w.print();
+ w.close();
+}
+    </script>
+
+    <style type="text/css">
+        header {
+            background-color: lightblue;
+        }
+        
+        footer {
+            background-color: lightblue;
+            text-align: center;
+        }
+        
+        #ss {
+            background-color: grey;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="print-content">
+        <header>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h2>Indian Airlines</h2>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <h2>Boarding Pass</h2>
+                    </div>
+                    <div class="col-lg-3">
+                        <img src="1.png" alt="1.png" style="width:100%">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <br>
+        <br>
+        <div class="container" id="ss">
+            <form>
+                <fieldset>
+                    <div>
+                        <label for="name">Name of the passenger:</label>
+                        <input id="name" name="name" value="" required pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+" aria-required="true" aria-describedby="name-format">
+                        <span id="name-format" class="help">Format: firstname lastname</span>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="from">From:</label>
+                        <input type="from" id="from" name="from" value="" required aria-required="true">
+                    </div>
+                    <br>
+
+                    <div>
+                        <label for="To">To:</label>
+                        <input type="To" id="To" name="To" value="" required aria-required="true">
+                    </div>
+                    <br>
+                    <div>
+
+                        <div>
+                            <label for="Gate">Gate:</label>
+                            <input type="Gate" id="Gate" name="Gate" value="" required aria-required="true">
+
+                            <label for="Boardingtill">Boardingtill:</label>
+                            <input type="Boardingtill" id="Boardingtill" name="Boardingtill" value="" required aria-required="true">
+
+                            <label for="Seat">Seat:</label>
+                            <input type="Seat" id="Seat" name="Seat" value="" required aria-required="true">
+                        </div>
+                        <br>
+
+                        <div>
+                            <label for="flight">flight:</label>
+                            <input type="flight" id="flight" name="flight" value="" required aria-required="true">
+
+                            <label for="Date">Date:</label>
+                            <input type="Date" id="Data" name="Date" value="" required aria-required="true">
+
+                            <label for="Time">Time:</label>
+                            <input type="Time" id="Time" name="Time" value="" required aria-required="true">
+                        </div>
+                        <br>
+
+                        <input id="submit" type="submit" onclick="function results()" value="Submit" />
+                          <input type="button" onclick="printDiv('print-content')" value="print"/>
+                </fieldset>
+
+            </form>
+        </div>
+            <br>
+
+
+            
+            <footer>
+                <h1>Safe Journey....</h1>
+            </footer>
+    </div>
+</body>
+
+</html>

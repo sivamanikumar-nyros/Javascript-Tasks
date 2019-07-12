@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Form Validation: Valid Zip Code </title>
+    <style type="text/css">
+        body{
+
+            background-color: black;
+            color: white;
+        }
+        legend{
+
+            border:5px solid white;
+            padding: 5px;
+        }
+        h2{
+            background-color: blue;
+            padding: 5px;
+
+        }
+        input {
+            
+            background: #A1ABB5;
+            transition: all 0.3s;
+            display: inline-block;
+            padding: 0 5px;
+            color: #666;
+            font-size: 20px;
+            margin: 10px 0;
+
+        }
+        
+        
+        input:focus {
+            color: #222;
+            background: #97ABBE;
+            border-color: #999;
+        }
+        
+        input:valid {
+            box-shadow: 0 0 2px rgba(0, 255, 0, 0.4);
+        }
+        
+        input:valid:focus {
+            background: #80BE93;
+            box-shadow: none;
+        }
+        
+        input:invalid {
+            box-shadow: 0 0 2px rgba(255, 0, 0, 0.4);
+        }
+        
+        input:invalid:focus {
+            background: #CB9089;
+            box-shadow: none;
+        }
+        #submit{
+            margin-left: 5%;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    
+ <center><legend>
+        <form name="myform" onsubmit="return valid()">
+            <legend><h2>Validation</h2></legend>
+                        
+            <b>State Name:</b>
+            <input type="text" id='State' size="3" title="Please provide a short name for state (Example:Ap)">
+            
+            <b>Country Name:</b>
+            <input type="text" id='Country' size="6" title="Please provide a country name (Example:India)">
+            
+            <b>Zip Code:</b>
+            <input type="text" id='Zipcode' size="6" title="Please provide a valid zipcode.enter only 6 digits.. (Example:533433)">
+            
+            <b>Shipmate's answer:</b>
+            <input type="text" id='Shipmate' size="6" title="Please provide a answer (Example:ok, i will do it)">
+
+            <b>Taglines:</b>
+            <input type="text" id='Taglines' size="6" title="does not contain numbers
+				40 characters or less 20 characters or more..Example:Work like a captain, play like a pirate.">
+
+            
+            
+            <input type="reset"  value="Clear" />
+            <input type='submit' id="submit" value="submit">
+        </form></legend>
+    </center>
+    <script type="text/javascript">
+        function valid() {
+            var state = document.getElementById('State');
+            var stateRegex = /^[A-Za-z]{2}$/;
+            
+            var country = document.getElementById('Country');
+            var countryRegex = /^[A-Za-z]{2,}$/;    
+                
+            var zip = document.getElementById('Zipcode');
+            var zipRegex = /^\d{6}$/;
+
+            var shipmate = document.getElementById('Shipmate');
+            var shipmateRegex = /^\D*[a-zA-Z]{1,4}$/;
+
+            var taglines = document.getElementById('Taglines');
+            var taglineRegex = /^(\D{20,40})+$/;
+
+			            
+
+            
+
+            if (!stateRegex.test(state.value)) {
+                alert('Please provide a short name for state (Example:Ap)');
+                document.getElementById("State").focus();
+                return false;
+            }
+
+            if (!countryRegex.test(country.value)) {
+                alert('Please provide a country name (Example:India)');
+                document.getElementById("Country").focus();
+                return false;
+            }
+
+            if (!zipRegex.test(zip.value)) {
+                alert('Please provide a valid zipcode.enter only 6 digits.. (Example:533433)');
+                document.getElementById("Zipcode").focus();
+                return false;
+            }
+            if (!shipmateRegex.test(shipmate.value)) {
+                alert('Please provide a answer (Example:ok, i will do it or Okay)');
+                document.getElementById("Shipmate").focus();
+                return false;
+            }
+
+            if (!taglineRegex.test(taglines.value)) {
+                alert('Please provide a tagline. Note:does not contain numbers 40 characters or less 20 characters or more..Example:Work like a captain, play like a pirate.');
+                document.getElementById("Taglines").focus();
+                return false;
+            }
+            
+            else
+
+            	alert("Validation Success");
+            
+            
+        }
+    </script>
+</body>
+
+</html>

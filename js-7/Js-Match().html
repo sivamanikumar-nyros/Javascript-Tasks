@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Js-Match()</title>
+</head>
+
+<body>
+    <p>Please click to see the birds list</p>
+    <button onclick="myFunction()">Try it</button>
+    <p>Output:</p>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var string = " King penguin \n Emperor penguin \n Wandering albatross \n Arctic Tern \n Rockhopper Penguin \n Narwhal \n Weddell seal";
+            var re = /(penguin|albatross|Tern)/gi;
+            var result = string.match(re);
+            document.getElementById("demo").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

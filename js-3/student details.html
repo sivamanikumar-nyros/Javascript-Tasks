@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style type="text/css">
+    table{
+        font-size: 1.5em;
+        background-color: brown;
+        border:5px solid green;
+    }
+     
+    #print{
+        padding: 10px;
+        border:3px solid black;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 1em;
+        font-weight: bold;
+        background-color: green;
+    }
+    
+    input[type=text] {
+            position: static;
+            display: block;
+            width: 200px;
+            
+        }
+        body{
+            background-image: url("23.png");
+        }
+        
+
+</style>
+<script type = "text/javascript">
+    function students()
+    {
+        var name,roll_number,branch,section,submit;
+        name =(document.form1.wp.value);
+        roll_number =(document.form1.sp.value);
+        branch = (document.form1.cg.value);
+        section = (document.form1.cg1.value);
+        submit = name + "\t" + roll_number + "\t" + branch + "\t" + section;
+        
+        document.form1.name.value = name;
+        document.form1.roll_number.value = roll_number;
+        document.form1.branch.value = branch;
+        document.form1.section.value =section;
+
+
+        
+    }
+
+    
+            function myFunction() {
+    window.print();
+}
+
+
+       
+</script>
+</head>
+<body>
+
+    <form name = "form1">
+        <table border = "1">
+            
+            <tr>
+                <td colspan = "2" align = "center">Student details</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><input type = "string" name = "wp" style="width:199px" /></td>
+            </tr>
+            <tr>
+                <td>roll_number</td>
+                <td><input type = "text" name = "sp" /></td>
+            </tr>
+            <tr>
+                <td>branch</td>
+                <td><input type = "text" name = "cg" /></td>
+            </tr>
+            <tr>
+                <td>section</td>
+                <td><input type = "text" name = "cg1" /></td>
+
+            </tr>
+            <tr>
+                <td colspan = "2" align = "center" id="siva"><input type = "button"   onclick = "students()" value = "Submit" style="padding: 5px;font-weight: bold;background-color:blue;color:white;border:3px solid black;width:100px;border-radius: 20px;" /></td>
+            </tr>           
+            <tr>
+                <td>name</td>
+                <td><input type = "text" name = "name"/></td>
+                <td>roll_number</td>
+                <td><input type = "text" name = "roll_number"/></td>
+                <td>branch</td>
+                <td><input type = "text" name = "branch"/></td>
+                <td>section</td>
+                <td><input type = "text" name = "section"/></td>
+            </tr>
+
+        </table>
+            <br><button type="button" onClick="myFunction()" id="print">Print Your Details</button>
+            
+    </form>
+</body>
+</html>
+        
+        

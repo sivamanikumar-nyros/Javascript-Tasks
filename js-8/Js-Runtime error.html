@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Runtime error</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        try {
+            undefinedfunction()
+            alert('I guess you do exist')
+        } catch (e) {
+            alert('An error has occurred: ' + e.message)
+        } finally {
+            alert('I am alerted regardless of the outcome above')
+        }
+
+        try {
+            for (var i = 10; i < 20; i++) {
+                if (i == 14)
+                    break
+                x = i
+            }
+        } finally {
+            alert(i)
+        }
+    </script>
+</body>
+
+</html>

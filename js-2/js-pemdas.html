@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js-pemdas</title>
+    <style type="text/css">
+    h1{
+        background-color: green;
+        color: white;
+        text-align: center;
+    }
+    
+    </style>
+    <script type="text/javascript">
+        function grouping() {
+            var a, b, c, x;
+            a = Number(document.getElementById("grp1").value);
+            b = Number(document.getElementById("grp2").value);
+            c = Number(document.getElementById("grp3").value);
+
+            x = a + b * c;
+            document.getElementById("grp4").value = x;
+        }
+        function grouping4() {
+            var a, b, c, x;
+            a = Number(document.getElementById("g1").value);
+            b = Number(document.getElementById("g2").value);
+            c = Number(document.getElementById("g3").value);
+
+            x = (a + b) * c;
+            document.getElementById("g").value = x;
+        }
+
+        
+
+        function grouping2() {
+            var a, b, c, x;
+            a = Number(document.getElementById("a").value);
+            b = Number(document.getElementById("b").value);
+            c = Number(document.getElementById("c").value);
+
+            x = (a - b) * c;
+            document.getElementById("d").value = x;
+        }
+
+        function grouping3() {
+            var a, b, c, x;
+            a = Number(document.getElementById("a1").value);
+            b = Number(document.getElementById("b1").value);
+            c = Number(document.getElementById("c1").value);
+
+            x = a * b + b * c;
+            document.getElementById("d1").value = x;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Grouping expressions in javascript</h1>
+    <h3>a+b*c</h3> Enter your first number :
+    <input id="grp1">
+    <br>
+    <br> Enter your second number:
+    <input id="grp2">
+    <br>
+    <br> Enter your third number:
+    <input id="grp3">
+    <br>
+    <br>
+    <button onclick="grouping()">check</button>
+    <input id="grp4">
+    <hr><hr>
+
+
+    <h3>(a+b)*c</h3> Enter your first number :
+    <input id="g1">
+    <br>
+    <br> Enter your second number:
+    <input id="g2">
+    <br>
+    <br> Enter your third number:
+    <input id="g3">
+    <br>
+    <br>
+    <button onclick="grouping4()">check</button>
+    <input id="g">
+    <hr><hr>
+
+
+    <h3>(a-b)*c</h3> Enter your first number :
+    <input id="a">
+    <br>
+    <br> Enter your second number:
+    <input id="b">
+    <br>
+    <br> Enter your third number:
+    <input id="c">
+    <br>
+    <br>
+    <button onclick="grouping2()">check</button>
+    <input id="d">
+    <hr><hr>
+
+
+    <h3>(a*b)+(b*c)</h3> Enter your first number :
+    <input id="a1">
+    <br>
+    <br> Enter your second number:
+    <input id="b1">
+    <br>
+    <br> Enter  your third number:
+    <input id="c1">
+    <br>
+    <br>
+    <button onclick="grouping3()">check</button>
+    <input id="d1">
+    <hr><hr>
+    
+
+</body>
+
+</html>

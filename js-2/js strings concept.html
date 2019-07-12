@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+	<html>
+			<style type="text/css">
+				footer{
+					text-align: center;
+					background-color: green;
+					color: white;
+				}
+				h1{
+					text-align: center;
+					background-color: green;
+					color: white;
+				}
+			</style>
+		<body>
+			<h1>JavaScript Strings Concepts</h1>
+    		<p>Click the button to see the length of the string</p>
+    		<p><strong>NOTE: "Welcome To JavaScript ".</p>
+
+			<button onclick="length()">click</button>
+
+			<p id="demo"></p>
+			<hr><hr>
+
+			<p>Checking for matching strings and alphabetical ordering (==)</p>
+			<button onclick="myFunction()">Try it</button>
+
+			<p id="demo2"></p>
+
+			<hr><hr>
+
+			<h2> Special characters inside Strings, like: \\, \t, \n, </h2>
+			<h3>Description about \\</h3>
+			<p>Note that the backslash \ serves for the correct reading of the string by JavaScript, then disappears.</p> <p>The in-memory string has no \. You can clearly see that in alert from the examples above.</p>
+
+			<p>But what if we need to show an actual backslash \ within the string?
+
+			That’s possible, but we need to double it like \\:</p>
+
+			<h2>\n concept</h2>
+			<p>Click the button to return the position where the newline character was found in a string.</p>
+			NOTE:This is a Text: JavaScript.\nLearn JavaScript.
+
+			<button onclick="newline()">Try it</button>
+
+			<p id="demo1"></p>
+			<hr><hr>
+			<h2>Concatenation works strings with numbers</h2>
+			<input type="text" name="" id="str1" placeholder="enter a string">
+			<input type="text" name="" id="str2" placeholder="enter a number">
+			<input type="text" name="" id="str11">
+			<button onclick="button3()">click</button>
+
+			<script>
+				function length() {
+    				var str = "Welcome To JavaScript";
+    				var n = str.length;
+    				document.getElementById("demo").innerHTML = n;
+				}
+
+				var names = ["siva", "ajay", "kumar", "sai"];
+				document.getElementById("demo2").innerHTML = names;
+
+				function myFunction() {
+    				names.sort();
+    				document.getElementById("demo2").innerHTML = names;
+				}
+
+				function newline() {
+    				var str = "JavaScript.\nLearn JavaScript."; 
+    				var patt1 = /\n/;
+    				var result = str.search(patt1);
+    				document.getElementById("demo1").innerHTML = result;
+				}
+
+				function button3(){
+								var a,b;
+								a=document.getElementById("str1").value;
+
+								b=document.getElementById("str2").value;
+								result=a+b;
+								document.getElementById("str11").value=result;
+				}
+
+				function newTest(x){
+							window.alert("I want to learn" + x + "<br/>");
+
+				}
+				newTest("JavaScript");
+				newTest("HTML");
+				newTest("CSS");
+				newTest("SQL");
+				newTest("Angular Js");
+			</script>
+			<br><br><br>
+
+			<footer><h1>JavaScript Strings Concepts</h1></footer>
+		</body>
+	</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            font-family: "Arial", Helvetica, sans-serif;
+            position: relative;
+            background-color: black;
+            color: white;
+        }
+        
+        #container {
+            text-align: center;
+            position: relative;
+            height: 100%;
+        }
+        
+        #movies_booked,
+        #form {
+            display: inline-block;
+            width: 40%;
+            height: 100%;
+            margin: 0 auto;
+            vertical-align: text-top;
+        }
+        
+        fieldset,
+        #movies_booked {
+            border: 1px solid #AED0EA;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #D7EBF9;
+            background-color: blue;
+
+        }
+        
+        legend,
+        #disount_title {
+            color:white;
+            font-size: 120%;
+            text-align: center;
+            background-color: green;
+            border:5px solid white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #D7EBF9;
+        }
+        
+        p {
+            overflow: hidden;
+        }
+        
+        label {
+            width: 50%;
+            text-align: right;
+            float: left;
+            clear: both;
+            color:white;
+            font-weight: bold;
+        }
+        
+        p input,
+        p select {
+            width: 40%;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            margin-left: 5%;
+            margin-right: 5%;
+            color: #2779AA;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="container">
+        <div id="form">
+            <form id="book_tickets">
+                <fieldset>
+                    <legend>Booking Movie Tickets</legend>
+
+                    <p>
+                        <label for="movie_name">Movie</label>
+                        <select id="movie_name" name="movie_name" required autofocus>
+                            <option></option>
+                            <option value="Movie 1">Lavakusa</option>
+                            <option value="Movie 2">Sriramarajyam</option>
+                            <option value="Movie 3">Annamayya</option>
+                            <option value="Movie 3">Jai sriram</option>
+                            <option value="Movie 3">Durga</option>
+                            <option value="Movie 3">Devi</option>
+                            <option value="Movie 3">Nagadevatha</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="theaters">Theaters</label>
+                        <select id="theaters" required>
+                            <option></option>
+                            <option value="Theater 1">Mayuri</option>
+                            <option value="Theater 2">Devi multiplex</option>
+                            <option value="Theater 3">Anand complex</option>
+                            <option value="Theater 3">c & c</option>
+                            <option value="Theater 3">Inox theater</option>
+
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date" min="today" required />
+                    </p>
+
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required />
+                    </p>
+
+                    <p>
+                        <label for="tickets_quantity"># Tickets</label>
+                        <input type="number" min="1" name="tickets_quantity" id="tickets_quantity" required />
+                    </p>
+
+                    <p>
+                        <label>Total Price</label>
+                        <span id="total_price">(enter data first)</span>
+                    </p>
+                    <div id="submit_wrapper">
+                        <input type="submit" id="submit" value="Book Tickets" />
+                    </div>
+                </fieldset>
+            </form>
+            <p id="perTicketPrice">Per ticket price = &#x20b9; 100.00</p>
+        </div>
+    </div>
+</body>
+
+</html>

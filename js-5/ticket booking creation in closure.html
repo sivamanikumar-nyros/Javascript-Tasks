@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+  <form>
+    <h1>Please enter data</h1>
+    <input id="title" type="text" placeholder="Transport_type" />
+    <input id="name" type="text" placeholder="Name" />
+    <input id="number" type="text" placeholder="Phonenumber" />
+    <input id="tickets" type="text" placeholder="Tickets" />
+    <input type="button" value="Save/Show" onclick="insert()" />
+  </form>
+  
+  <div id="display"></div>
+  
+  <script>
+    var titles  = [];
+var names   = [];
+var numbers = [];
+var tickets = [];
+
+
+var titleInput  = document.getElementById("title");
+var nameInput   = document.getElementById("name");
+var numberInput   = document.getElementById("number");
+var ticketInput = document.getElementById("tickets");
+
+var messageBox  = document.getElementById("display");
+
+function insert ( ) {
+ titles.push( titleInput.value );
+ names.push( nameInput.value );
+ numbers.push( numberInput.value );
+ tickets.push( ticketInput.value );
+  
+ clearAndShow();
+}
+
+function clearAndShow () {
+  
+  titleInput.value = "";
+  nameInput.value = "";
+  numberInput.value = "";
+  ticketInput.value = "";
+  
+  messageBox.innerHTML = "";
+  
+  messageBox.innerHTML += "Transport_type: " + titles.join(",") + "<br/>";
+  messageBox.innerHTML += "Name: " + names.join(", ") + "<br/>";
+  messageBox.innerHTML += "Contact_number: " + numbers.join(", ") + "<br/>";
+  messageBox.innerHTML += "No_of_Tickets: " + tickets.join(",<br/> ");
+
+  
+
+}
+function Result(){
+
+    clearAndShow();
+
+}
+
+
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+document.write(makeid());
+  </script>
+</body>
+</html>

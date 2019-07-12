@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        table {
+            border: 5px solid black;
+            background-color: grey;
+            color: black;
+            width: 500px;
+            margin-top: 3%;
+        }
+        
+        th {
+            border: 5px solid black;
+        }
+        
+        td {
+            border: 3px solid black;
+            padding: 10px;
+        }
+        body{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is a movie ticket booking process</h1>
+    <h2>This is adding tickets and removing process</h2>
+    <h2>You have to remove please click this links movie,duration,price </h2>
+    <h2>Please try this....</h2>
+
+    <input type="text" value="movie_name" id="addMovie" />
+    <input type="text" value="duration" id="addDuration" />
+    <input type="text" value="price" id="addPrice" />
+
+    <input type="submit" value="Click to confirm" onClick="addToMovie();addToDuration();addToPrice ();">
+
+    <table>
+        <th>Movie_name</th>
+        <th>Duration</th>
+        <th>Price</th>
+        <tbody>
+            <tr>
+                <td id="movies"></td>
+                <td id="duration"></td>
+                <td id="price"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        var movieList = [];
+        var durationList = [];
+        var priceList = [];
+
+        function addToMovie() {
+            var addMovie = document.getElementById('addMovie').value;
+            movieList.push(addMovie);
+
+            for (i = 0; i < movieList.length; i++) {
+                var newMovie = "<a href='#' onClick='removeRecord1(" + i + ");'>Movie_name:</a> " + movieList[i] + " <br>";
+            };
+            document.getElementById('movies').innerHTML += newMovie;
+        }
+
+        function addToDuration() {
+            var addDuration = document.getElementById('addDuration').value;
+            durationList.push(addDuration);
+
+            for (i = 0; i < durationList.length; i++) {
+                var newDuration = "<a href='#' onClick='removeRecord2(" + i + ");'>Duration:</a> " + durationList[i] + " <br>";
+            };
+            document.getElementById('duration').innerHTML += newDuration;
+        }
+
+        function addToPrice() {
+            var addPrice = document.getElementById('addPrice').value;
+            priceList.push(addPrice);
+
+            for (i = 0; i < priceList.length; i++) {
+                var newPrice = "<a href='#' onClick='removeRecord3(" + i + ");'>Price:</a> " + priceList[i] + " <br>";
+            };
+            document.getElementById('price').innerHTML += newPrice;
+        }
+
+        function removeRecord1(i) {
+
+            var j = i;
+
+            var tempList = [];
+
+            var newMovie = "";
+            for (var i = 0; i < movieList.length; i++) {
+                if (i != j) {
+
+                    tempList.push(movieList[i]);
+                }
+            };
+
+            movieList = tempList;
+
+            for (var i = 0; i < movieList.length; i++) {
+                newMovie += "<a href='#' onClick='removeRecord1(" + i + ");'>Movie_name:</a> " + movieList[i] + " <br>";
+            };
+            document.getElementById('movies').innerHTML = newMovie;
+        }
+
+        function removeRecord2(i) {
+
+            var j = i;
+
+            var tempList = [];
+
+            var newDuration = "";
+            for (var i = 0; i < durationList.length; i++) {
+                if (i != j) {
+
+                    tempList.push(durationList[i]);
+                }
+            };
+
+            durationList = tempList;
+
+            for (var i = 0; i < durationList.length; i++) {
+                newDuration += "<a href='#' onClick='removeRecord2(" + i + ");'>Duration:</a> " + durationList[i] + " <br>";
+            };
+            document.getElementById('duration').innerHTML = newDuration;
+        }
+
+        function removeRecord3(i) {
+
+            var j = i;
+
+            var tempList = [];
+
+            var newPrice = "";
+            for (var i = 0; i < priceList.length; i++) {
+                if (i != j) {
+
+                    tempList.push(priceList[i]);
+                }
+            };
+
+            priceList = tempList;
+
+            for (var i = 0; i < priceList.length; i++) {
+                newPrice += "<a href='#' onClick='removeRecord3(" + i + ");'>Price:</a> " + priceList[i] + " <br>";
+            };
+            document.getElementById('price').innerHTML = newPrice;
+        }
+
+        function myFunction() {
+            window.print();
+        }
+    </script>
+        <br>
+        <button type="button" onClick="myFunction()" id="print">Print A Ticket</button>
+
+</body>
+
+</html>

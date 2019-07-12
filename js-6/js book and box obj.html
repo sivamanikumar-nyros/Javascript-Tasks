@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Book & Box objects creation in js</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        table {
+            border: 5px solid black;
+            background-color: #69e083;
+            color: black;
+            width: 100%;
+            text-align: center;
+        }
+        
+        th {
+            border: 5px solid black;
+        }
+        
+        td {
+            border: 3px solid black;
+            padding: 10px;
+        }
+        
+        button {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 2%;
+            background-color: blue;
+            color: white;
+            border-color: red;
+        }
+        
+        body {
+            background-color: #6ae2e0;
+        }
+        
+        header {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <header>
+            <h1>This is a box</h1>
+            <h2>Enter details what you want...</h2>
+            <img src="Wood_Box.png" style="float:left;width:250px;">
+        </header>
+        height:
+        <input type="text" id="height">
+        <br/>
+        <br/> width:
+        <input type="text" id="width">
+        <br/>
+        <br/> length:
+        <input type="text" id="length">
+        <br/>
+        <br/> volume:
+        <input type="text" id="volume">
+        <br/>
+        <br/> material:
+        <input type="text" id="material">
+        <br/>
+        <br/> contents:
+        <input type="text" id="contents">
+        <br/>
+        <header>
+            <h1>This is a book</h1>
+            <h2>Enter details what you want...</h2>
+            <img src="book1.jpg" style="float:left;width:300px;">
+        </header>
+        <br/> title:
+        <input type="text" id="title">
+        <br/>
+        <br/> author:
+        <input type="text" id="author">
+        <br/>
+        <br/> publisher:
+        <input type="text" id="publisher">
+        <br/>
+        <br/> numChapters:
+        <input type="text" id="numChapters">
+        <br/>
+        <br/> numPages:
+        <input type="text" id="numPages">
+        <br/>
+        <br/> illustrator:
+        <input type="text" id="illustrator">
+        <br/>
+        <br/>price:
+        <input type="text" id="price">
+        <br/>
+        <br/>
+        <input type="button" id="button" onclick="finalResult();" value="Submit">
+        <br/>
+        <br/>
+    </center>
+    <table>
+
+        <tbody>
+            <th>Books</th>
+            <th>Adding books content in box</th>
+            <tr>
+
+                <td id="output"></td>
+
+                <td id="output1"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+    <b>DELETE:</b>
+    <br/>
+    <h2>If you want to delete the book objects please enter any keyword in this feild</h2>
+    <input type="text" id="select" value="books" />
+    <button onclick="removeFunction(selectedx());updateOutput();">Remove</button>
+    <p id="output"></p>
+    <h2>If you want to delete the box objects please enter any keyword in this feild</h2>
+    <input type="text" id="select" value="boxes" />
+    <button onclick="removeFunction1(selectedx1());updateOutput1();">Remove</button>
+    <p id="output1"></p>
+
+    <script type="text/javascript">
+        var books = [];
+
+        function Book(title, author, publisher, numChapters, numPages, illustrator, price) {
+
+            this.title = title;
+            this.author = author;
+            this.publisher = publisher;
+            this.numChapters = numChapters;
+            this.numPages = numPages;
+            this.illustrator = illustrator;
+            this.price = price;
+            this.doIt = function() {
+                return ' Book Name:' + this.title + '<br/> Author: ' + this.author + '<br/> Publisher: ' + this.publisher + '<br/> No.of.chapters: ' + this.numChapters + ' <br/>No.of.pages: ' + this.numPages + '<br/> Illustrator: ' + this.illustrator + '<br/> price:' + this.price;
+            }
+
+        }
+
+        function doIt() {
+
+            output = "";
+            for (var i = 0; i < books.length; i++) {
+                output += (i + 1) + ") " + books[i].doIt() + "<br/><br/> ";
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+        function removeFunction() {
+            var i = books.indexOf();
+            if (i = "books") {
+                books.splice(i);
+            } else {
+                alert(+' cannot be removed, as it is not present in the array.');
+            }
+        }
+
+        function selectedx() {
+            return document.getElementById('select').value;
+        }
+
+        function updateOutput() {
+            document.getElementById('output').innerHTML = books.join('<br/>Successfully deleted book objects <br/>');
+        }
+
+        function result() {
+            var book = new Book(
+                document.getElementById("title").value,
+                document.getElementById("author").value,
+                document.getElementById("publisher").value,
+                document.getElementById("numChapters").value,
+                document.getElementById("numPages").value,
+                document.getElementById("illustrator").value,
+                document.getElementById("price").value,
+
+            );
+
+
+            books.push(book);
+            doIt();
+        }
+        delete this.output;
+        console.log(books);
+        var boxes = [];
+
+        function Box(height, width, length, volume, material, contents) {
+
+            this.height = height;
+            this.width = width;
+            this.length = length;
+            this.volume = volume;
+            this.material = material;
+            this.contents = output;
+
+            this.doIts = function() {
+                return ' height:' + this.height + '<br/> width: ' + this.width + '<br/> length: ' + this.length + '<br/> volume: ' + this.volume + ' <br/>material: ' + this.material + '<br/> contents: ' + this.contents;
+            }
+        }
+
+        function doIts() {
+
+            output1 = "";
+            for (var x = 0; x < boxes.length; x++) {
+                output1 += (x + 1) + ") " + boxes[x].doIts() + "<br/><br/><hr><hr> ";
+            }
+            document.getElementById("output1").innerHTML = output1;
+        }
+
+        function removeFunction1() {
+            var i = boxes.indexOf();
+            if (i = "boxes") {
+                boxes.splice(i);
+            } else {
+                alert(' cannot be removed, as it is not present in the array');
+            }
+        }
+
+        function selectedx1() {
+            return document.getElementById('select').value;
+        }
+
+        function updateOutput1() {
+            document.getElementById('output1').innerHTML = boxes.join('<br/>Successfully deleted box objects <br/>');
+        }
+
+        function result1() {
+            var box = new Box(
+                document.getElementById("height").value,
+                document.getElementById("width").value,
+                document.getElementById("length").value,
+                document.getElementById("volume").value,
+                document.getElementById("material").value,
+                document.getElementById("contents").value
+            );
+            boxes.push(box);
+            doIts();
+        }
+        console.log(boxes);
+
+        function finalResult() {
+            result();
+            result1();
+        }
+    </script>
+
+</body>
+
+</html>

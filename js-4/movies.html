@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <style type="text/css">
+        table {
+            font-size: 1.5em;
+            background-color: brown;
+            border: 5px solid green;
+        }
+        
+        #print {
+            padding: 10px;
+            border: 3px solid black;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            background-color: green;
+        }
+        
+        input[type=text] {
+            position: static;
+            display: block;
+            width: 200px;
+        }
+        
+        body {
+            background-image: url("23.png");
+        }
+    </style>
+    <script type="text/javascript">
+        function movies() {
+            var movie_name, theater_name, price, tickets, submit;
+            movie_name = (document.form1.wp.value);
+            theater_name = (document.form1.sp.value);
+            price = (document.form1.cg.value);
+            tickets = (document.form1.cg1.value);
+            submit = movie_name + "\t" + theater_name + "\t" + price + "\t" + tickets;
+
+            document.form1.movie_name.value = movie_name;
+            document.form1.theater_name.value = theater_name;
+            document.form1.price.value = price;
+            document.form1.tickets.value = tickets;
+
+        }
+
+        function myFunction() {
+            window.print();
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="form1">
+        <table border="1">
+
+            <tr>
+                <td colspan="2" align="center">Movies Info...</td>
+            </tr>
+            <tr>
+                <td>movie_name</td>
+                <td>
+                    <input type="string" name="wp" style="width:199px" />
+                </td>
+            </tr>
+            <tr>
+                <td>theater_name</td>
+                <td>
+                    <input type="text" name="sp" />
+                </td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td>
+                    <input type="text" name="cg" />
+                </td>
+            </tr>
+            <tr>
+                <td>tickets</td>
+                <td>
+                    <input type="text" name="cg1" />
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2" align="center" id="siva">
+                    <input type="button" onclick="movies()" value="Submit" style="padding: 5px;font-weight: bold;background-color:blue;color:white;border:3px solid black;width:100px;border-radius: 20px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>movie_name</td>
+                <td>
+                    <input type="text" name="movie_name" />
+                </td>
+                <td>theater_name</td>
+                <td>
+                    <input type="text" name="theater_name" />
+                </td>
+                <td>price</td>
+                <td>
+                    <input type="text" name="price" />
+                </td>
+                <td>tickets</td>
+                <td>
+                    <input type="text" name="tickets" />
+                </td>
+            </tr>
+
+        </table>
+        <br>
+        <button type="button" onClick="myFunction()" id="print">Print Your Details</button>
+
+    </form>
+</body>
+
+</html>

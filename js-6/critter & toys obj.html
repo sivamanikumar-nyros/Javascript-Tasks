@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aquarium</title>
+</head>
+
+<body>
+<h1>Please see the output of adding and removing functionalities in console</h1>
+<h2>Please inspect this page on console.....</h2>
+    <script>
+        function myFunction() {
+            var aquarium = {
+                Nemo: {
+                    type: "fish",
+                    species: "clownfish",
+                    length: 3.7
+                },
+                Marlin: {
+                    type: "fish",
+                    species: "clownfish",
+                    length: 4.1
+                },
+                Dory: {
+                    type: "fish",
+                    species: "blue tang",
+                    length: 6.2
+                },
+                Peach: {
+                    type: "echinoderm",
+                    species: "starfish",
+                    length: 5.3
+                },
+                "Coral Castle": {
+                    type: "environment",
+                    material: "coquina",
+                    moves: false
+                },
+                "Dragon Statue": {
+                    type: "environment",
+                    material: "plastic",
+                    moves: false
+                },
+                addCritter: function(name, type, species, length) {
+
+                    this[name] = {
+                        type: type,
+                        species: species,
+                        length: length
+                    };
+                },
+                addToy: function(name, type, material, moves) {
+
+                    this[name] = {
+                        type: type,
+                        material: material,
+                        moves: moves
+                    };
+                }
+
+            };
+
+            aquarium.addCritter("Bubbles", "fish", "yellow tang", 5.6);
+            aquarium.addCritter("Bellons", "fish", "blue tang", 4.6);
+            aquarium.addCritter("coral dow", "fish", "green tang", 3.6);
+            aquarium.addCritter("coral duck", "echinoderm", "blue tang", 4.6);
+            aquarium.addCritter("coral pig", "echinoderm", "blue tang", 6.6);
+            aquarium.addCritter("coral rosan", "echinoderm", "blue tang", 7.6);
+
+            aquarium.addToy("coral statue1", "environment", "plastic", false);
+            aquarium.addToy("coral statue2", "environment", "plastic", false);
+            aquarium.addToy("coral statue3", "environment", "plastic", false);
+            aquarium.addToy("coral statue4", "environment", "rubber", false);
+            aquarium.addToy("coral statue5", "environment", "rubber", false);
+            aquarium.addToy("coral statue6", "environment", "rubber", false);
+
+            console.log(aquarium);
+
+            function addCritter(container, name, type, species, length) {
+
+                container[name] = {
+                    type: type,
+                    species: species,
+                    length: length
+                };
+            }
+
+            function addToy(container, name, type, material, moves) {
+
+                container[name] = {
+                    type: type,
+                    material: material,
+                    moves: moves
+                };
+            }
+
+            aquarium.takeOut = function(name) {
+                this[name].name = name;
+                var result = this[name];
+                delete this[name];
+                return result;
+            };
+
+            var fishOutOfWater = aquarium.takeOut("coral statue1");
+            var fishOutOfWater = aquarium.takeOut("Nemo");
+            console.log(fishOutOfWater);
+
+            var numFish = 0;
+            for (fishes in aquarium) {
+                if (aquarium[fishes].type == "fish") {
+                    numFish++;
+                    console.log(numFish);
+                    document.getElementById("counting").innerHTML = numFish;
+                }
+            }
+
+        }
+    </script>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="counting">Please click to see the how many fishes are present in your aquarium.</p>
+
+</body>
+
+</html>

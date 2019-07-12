@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Js-Task-7</title>
+    <style type="text/css">
+        body{
+
+            background-color: black;
+            color: white;
+        }
+        legend{
+
+            border:5px solid white;
+            padding: 5px;
+        }
+        h2{
+            background-color: blue;
+            padding: 5px;
+
+        }
+        input {
+            
+            background: #A1ABB5;
+            transition: all 0.3s;
+            display: inline-block;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #888;
+            color: #666;
+            font-size: 25px;
+            margin: 10px 0;
+            line-height: 45px;
+        }
+        
+        
+        input:focus {
+            color: #222;
+            background: #97ABBE;
+            border-color: #999;
+        }
+        
+        input:valid {
+            box-shadow: 0 0 2px rgba(0, 255, 0, 0.4);
+        }
+        
+        input:valid:focus {
+            background: #80BE93;
+            box-shadow: none;
+        }
+        
+        input:invalid {
+            box-shadow: 0 0 2px rgba(255, 0, 0, 0.4);
+        }
+        
+        input:invalid:focus {
+            background: #CB9089;
+            box-shadow: none;
+        }
+        #submit{
+            margin-left: 5%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <center><legend>
+        <form name="myform" method="post" action="Flight reservation form.html" onsubmit="return valid();">
+            <legend><h2>Registration</h2></legend>
+            <h3>Validating email address Phonenumber and password using JavaScript without a regular expression</h3>
+            <label for="email"><b>Email (format:name@gmail.com)</b>
+                <br/>
+            </label>
+            <br/> Email:
+            <input type="email" value="" placeholder="name@email.com" size="25" required />
+            <br>
+            <br/>Phone Number:
+            <input type="tel" value="" name="phone1" size="2" placeholder="91"  required />
+            <input type="tel" value="" name="phone2" size="3" placeholder="884" required />
+            <input type="tel" value="" name="phone3" size="3" placeholder="234" required />
+            <input type="tel" value="" name="phone4" size="4" placeholder="2424" required />
+            <br>
+            <br>Your password:
+            <input type="password" name="pass1" size="25">
+            <br>
+            <br> Confirm password:
+            <input type="password" name="pass2" size="25">
+            <br>
+            <br>
+            <input type="reset"  value="Clear" />
+            <input type='submit' id="submit" value="submit">
+        </form></legend>
+    </center>
+
+    <script type="text/javascript">
+        function valid() {
+            var password = document.myform.pass1.value;
+            var cpassword = document.myform.pass2.value;
+            var number1 = document.myform.phone1.value;
+            var number2 = document.myform.phone2.value;
+            var number3 = document.myform.phone3.value;
+            var number4 = document.myform.phone4.value;
+
+            if(number1.length < 2 ){
+
+                alert("The 1st field of number contains 2 characters and enter numbers only");
+                return false;
+
+            }
+            if(number2.length < 3) {
+
+                alert("The 2nd field of number contains 3 characters and enter numbers only");
+                return false;
+
+            }
+            if(number3.length < 3 ) {
+
+                alert("The 3rd field of number contains 3 characters and enter numbers only");
+                return false;
+
+            }
+            if(number4.length < 4 ){
+
+                alert("The 4th field of number contains 4 characters and enter numbers only");
+                return false;
+
+            }
+
+            if (password.length < 6) {
+                alert("password must contain 6 characters");
+                return false;
+
+            }
+            if (password == cpassword) {
+
+                return true;
+            } else {
+                alert("password and confirm password must be same");
+                return false;
+            }
+
+            
+
+
+        }
+    </script>
+
+</body>
+
+</html>

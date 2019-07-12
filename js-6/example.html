@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Book & Box objects creation in js</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    table {
+        border: 5px solid black;
+        background-color: grey;
+        color: black;
+        width: 100%;
+        text-align: center;
+    }
+    
+    th {
+        border: 5px solid black;
+    }
+    
+    td {
+        border: 3px solid black;
+        padding: 10px;
+    }
+    
+    button {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 2%;
+        background-color: blue;
+        color: white;
+        border-color: red;
+    }
+</style>
+
+</head>
+
+<body>
+
+    height:
+    <input type="text" id="height">
+    <br/>
+    <br/> width:
+    <input type="text" id="width">
+    <br/>
+    <br/> length:
+    <input type="text" id="length">
+    <br/>
+    <br/> volume:
+    <input type="text" id="volume">
+    <br/>
+    <br/> material:
+    <input type="text" id="material">
+    <br/>
+    <br/> contents:
+    <input type="text" id="contents">
+    <br/>
+    <br/> title:
+    <input type="text" id="title">
+    <br/>
+    <br/> author:
+    <input type="text" id="author">
+    <br/>
+    <br/> publisher:
+    <input type="text" id="publisher">
+    <br/>
+    <br/> numChapters:
+    <input type="text" id="numChapters">
+    <br/>
+    <br/> numPages:
+    <input type="text" id="numPages">
+    <br/>
+    <br/> illustrator:
+    <input type="text" id="illustrator">
+    <br/>
+    <br/>price:
+    <input type="text" id="price">
+    <br/>
+    <br/>
+    <input type="button" id="button" onclick="finalResult();" value="Submit">
+    <br/>
+    <table>
+        
+        <tbody>
+        	<th>Books</th>
+            	<th>Adding books content in box</th>
+            <tr>
+
+                <td id="output"></td>
+                <td id="output1"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="delete();">delete</button>
+    <script type="text/javascript">
+        var books = [];
+        function Book(title, author, publisher, numChapters, numPages, illustrator) {
+
+            this.title = title;
+            this.author = author;
+            this.publisher = publisher;
+            this.numChapters = numChapters;
+            this.numPages = numPages;
+            this.illustrator = illustrator;
+            this.price = price;
+            this.doIt = function() {
+                return ' Book Name:' + this.title + '<br/> Author: ' + this.author + '<br/> Publisher: ' + this.publisher + '<br/> No.of.chapters: ' + this.numChapters + ' <br/>No.of.pages: ' + this.numPages + '<br/> Illustrator: ' + this.illustrator;
+            }
+        }
+
+
+        function doIt() {
+
+            output = "";
+            for (var i = 0; i < books.length; i++) {
+                output += (i + 1) + ") " + books[i].doIt() + "<br/><br/> <hr/>";
+            }
+
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+        function result() {
+            var book = new Book(
+                document.getElementById("title").value,
+                document.getElementById("author").value,
+                document.getElementById("publisher").value,
+                document.getElementById("numChapters").value,
+                document.getElementById("numPages").value,
+                document.getElementById("illustrator").value,
+
+            );
+            var input1 = document.getElementById("price").value;
+            books["price"]=input1;
+
+            books.push(book);
+            doIt();
+            
+        }
+
+
+        console.log(books);
+        var boxes = [];
+
+        function Box(height, width, length, volume, material, contents) {
+
+            this.height = height;
+            this.width = width;
+            this.length = length;
+            this.volume = volume;
+            this.material = material;
+            this.contents = output;
+
+            this.doIts = function() {
+                return ' height:' + this.height + '<br/> width: ' + this.width + '<br/> length: ' + this.length + '<br/> volume: ' + this.volume + ' <br/>material: ' + this.material + '<br/> contents: ' + this.contents;
+            }
+        }
+
+        function doIts() {
+
+            output1 = "";
+            for (var x = 0; x< boxes.length; x++) {
+                output1 += (x + 1) + ") " + boxes[x].doIts() + "<br/><br/><hr><hr> ";
+            }
+            document.getElementById("output1").innerHTML = output1;
+        }
+
+        function result1() {
+            var box = new Box(
+                document.getElementById("height").value,
+                document.getElementById("width").value,
+                document.getElementById("length").value,
+                document.getElementById("volume").value,
+                document.getElementById("material").value,
+                document.getElementById("contents").value
+            );
+            boxes.push(box);
+            doIts();
+        }
+        console.log(boxes);
+
+        function finalResult() {
+            result();
+            result1();
+        }
+
+        function delete(){
+
+            var key = "books";
+            delete thisIsObject[key];
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>map function</title>
+</head>
+
+<body>
+    <h2>Please click this below button to see the result of 4,9,16,25 sqare root answer:</h2>
+    <p>square root of each element in the array.</p>
+
+    <button onclick="myFunction()">click me..</button>
+
+    <p id="demo"></p>
+
+    <h2>This is user selected chance:please enter a number to see the sqare root of a number</h2>
+    <h3>PLease click this below button..</h3>
+    <button onclick="userFunction()">click me..</button>
+
+    <p>Click this button to get a new array with the movie_name and duration in the array.</p>
+    <button onclick="movieFunction()">Click</button>
+
+    <p>Movie_name with Duration: <span id="demo2"></span></p>
+
+    <script>
+        var numbers = [4, 9, 16, 25];
+
+        function myFunction() {
+            x = document.getElementById("demo")
+            x.innerHTML = numbers.map(Math.sqrt);
+        }
+
+        function userFunction() {
+            var user = prompt("Enter a number:", "");
+            var answer = Math.sqrt(user);
+            document.write(answer);
+
+        }
+
+        var movies = [{
+            moviename: "Lavakusa",
+            duration: "3:00:00"
+        }, {
+            moviename: "Sriramdasu",
+            duration: "2:00:00"
+        }, {
+            moviename: "Annamayya",
+            duration: "2:20:00"
+        }];
+
+        function result(item, index) {
+            var fullname = [item.moviename, item.duration].join(" ");
+            return fullname;
+        }
+
+        function movieFunction() {
+            document.getElementById("demo2").innerHTML = movies.map(result);
+        }
+    </script>
+
+</body>
+
+</html>

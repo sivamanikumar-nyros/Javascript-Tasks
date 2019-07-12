@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+      <html>
+            <head>
+                  <title>JavaScript</title>
+                  <style type="text/css">
+                        h1{
+                              background-color: green;
+                              color: white;
+                              text-align: center;     
+                        }
+                        button{
+                              background-color: blue;
+                              color: white;
+                        }
+                  </style>
+            </head>
+            <body>
+                  <h1>JavaScript Operators</h1>
+                  <h2>addition</h2>
+                  <p>y = 5, calculate x = y + 2, and display x:</p>
+
+                  <button onclick="myFunction()">Try it</button>
+
+                  <p id="demo"></p>
+
+                  <h2>subtraction</h2>
+                  <p>y = 5, calculate x = y - 2, and display x:</p>
+
+                  <button onclick="myFunction1()">Try it</button>
+
+                  <p id="demo1"></p>
+
+                  <h2> multiplication</h2>
+                  <p>y = 5, calculate x = y * 2, and display x:</p>
+
+                  <button onclick="myFunction2()">Try it</button>
+
+                  <p id="demo2"></p>
+
+                  <h2>division</h2>
+                  <p>y = 5, calculate x = y / 2, and display x:</p>
+
+                  <button onclick="myFunction3()">Try it</button>
+
+                  <p id="demo3"></p>
+
+                  <h2>modulus</h2>
+                  <p>y = 2, calculate x = y % 2, and display x:</p>
+
+                  <button onclick="myFunction4()">Try it</button>
+
+                  <p id="demo4"></p>
+                  <hr><hr>
+                  <h1>Common Number Comparators used in JavaScript</h1>
+                  <h2>greater than or equal to:</h2>
+                  <h2>Please enter your marks to check you are pass or failed</h2>
+                        <input id="siva">
+                        <button onclick="myFunction5()">click to check</button>
+                        <p id="demo6"></p>
+
+                  <h2>equal:</h2>
+                  <h2>NOTE:please enter this code:533433</h2>
+                        <input id="siva1">
+                        <button onclick="myFunction6()">click to check</button>
+                        <p id="demo7"></p>
+
+                  <h2>less than:</h2>
+                        <input id="siva2">
+                        <button onclick="myFunction7()">click to check</button>
+                        <p id="demo8"></p>
+
+                  <h2>greater than:</h2>
+                        <input id="siva3">
+                        <button onclick="myFunction8()">click to check</button>
+                        <p id="demo9"></p>
+
+                  <h2>not equal:</h2>
+                  <strong>Note:</strong><h2>Enter javascript - this is not correct</h2>
+                  <h2>Enter JavaScript - this is correct</h2>***see the result***
+                        <input id="siva4">
+                        <button onclick="myFunction9()">click to check</button>
+                        <p id="demo10"></p>
+
+
+
+                  <script>
+                        function myFunction() {
+                                          var y = 5;
+                                          var x = y + 2;
+                                          document.getElementById("demo").innerHTML = x;
+                        }
+
+                        function myFunction1() {
+                                          var y = 5;
+                                          var x = y - 2;
+                                          document.getElementById("demo1").innerHTML = x;
+                        }
+
+                        function myFunction2() {
+                                          var y = 5;
+                                          var x = y * 2;
+                                          document.getElementById("demo2").innerHTML = x;
+                        }
+
+                        function myFunction3() {
+                                          var y = 5;
+                                          var x = y / 2;
+                                          document.getElementById("demo3").innerHTML = x;
+                        }
+
+                        function myFunction4() {
+                                          var y = 2;
+                                          var x = y % 2;
+                                          document.getElementById("demo4").innerHTML = x;
+                        }
+
+                        
+                        function myFunction5(){
+                              var marks;
+                              marks=document.getElementById("siva").value;
+                              if(marks >= 35){
+                                    document.getElementById("demo6").innerHTML="You are passed";
+                              }
+                              else{
+                                    document.getElementById("demo6").innerHTML="You are failed";
+                              }
+                        }
+
+                        function myFunction6(){
+                              var x=533433;
+                              var y;
+                              y=document.getElementById("siva1").value;
+                              if(x==y){
+                                    document.getElementById("demo7").innerHTML=window.alert("Hello Welcome To JavaScript");
+                              }
+                              else{
+                                    document.getElementById("demo7").innerHTML="You are failed this test...TRY AGAIN***";
+                              }
+
+                        }
+
+                        function myFunction7(){
+                                          var age;
+                                          age=document.getElementById("siva2").value;
+                                          if (age<18) {
+                                          document.getElementById("demo8").innerHTML="You cannot vote";
+
+                                          }
+                                          else{
+                                          document.getElementById("demo8").innerHTML="you can vote";
+                                          }
+                        }
+
+                        function myFunction8(){
+                                          var age;
+                                          age=document.getElementById("siva3").value;
+                                          if (age>50) {
+                                          document.getElementById("demo9").innerHTML="You are old";
+
+                                          }
+                                          else{
+                                          document.getElementById("demo9").innerHTML="you are young";
+                                          }
+                        }
+
+                        function myFunction9(){
+                               var x="JavaScript";
+                              var y;
+                              y=document.getElementById("siva4").value;
+                              if(x!=y){
+                                    document.getElementById("demo10").innerHTML=window.alert("You are not able to do this");
+                              }
+                              else{
+                                    document.getElementById("demo10").innerHTML="***Welcome to JavaScript***";
+                              }
+
+                        }
+
+                        
+
+                        
+
+                  </script>
+            </body>
+      </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+	       <title></title>
+        </head>
+        <body>
+            <h2>IN this case i entered fruits list but in this list i enterd wrong item that is cat so i want to delete it... </h2>
+                <button onclick="myFunction()">click</button>
+	           <script>
+                    function myFunction(){
+                        var my_array = ["Apple","Banana","Pineapple","Cat","Watermellon"];
+                        var start_index = 3
+                        var number_of_elements_to_remove = 1;
+                        var removed_elements = my_array.splice(start_index, number_of_elements_to_remove);
+                        window.alert(removed_elements);
+                        window.alert(my_array);
+                    }
+                </script>
+        </body>
+    </html>

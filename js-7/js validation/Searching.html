@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Searching</title>
+</head>
+<body>
+		<p>Click the button to replace "Google" with "Nyros" in the paragraph below:</p>
+
+		<p id="demo">Visit Google!</p>
+		<button onclick="myFunction()">Click</button>
+
+		<p>Click the button to display the extracted part of the string.</p>
+
+		<button onclick="myFunction()">Try it</button>
+
+		<p id="demo></p>
+
+
+	<script>
+		function myFunction() {
+    		var str = document.getElementById("demo").innerHTML; 
+    		var res = str.replace("Google", "Nyros");
+    		document.getElementById("demo").innerHTML = res;
+		}
+		
+		function myFunction() {
+    		var str = "Hello world!"; 
+    		var res = str.slice(1, 5);
+    		document.getElementById("demo").innerHTML = res;
+		}
+
+</script>
+
+
+</body>
+</html>

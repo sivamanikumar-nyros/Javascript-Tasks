@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>js-task-tostring()</title>
+		</head>
+		<body>
+			<center>
+			<h2 style="background-color: green;padding: 5px;">object.prototype.toString() & toString() & string toString() & Array toString() & Boolean toString() Demos:</h2></center>
+			
+			<script>
+	
+				function Student(name,number,branch,section) {
+  					this.name = name;
+  					this.number = number;
+  					this.branch = branch;
+  					this.section =section;
+				}
+
+				stu1 = new Student('siva','1','CSE','A');
+				stu2 = new Student('mani','2','CSE','A');
+				stu3 = new Student('kumar','3','CSE','A');
+				stu4 = new Student('sivamani','4','CSE','A');
+				stu5 = new Student('sivamanikumar','5','CSE','A');
+
+				Student.prototype.toString = function studentToString() {
+  					return "Name:"+this.name +" "+"Roll_Number:"+ this.number +" "+"Branch:" +this.branch +" "+"Section:"+ this.section+"<br/>";
+				}
+
+				document.write(stu1.toString());
+				document.write(stu2.toString());
+				document.write(stu3.toString());
+				document.write(stu4.toString());
+				document.write(stu5.toString());
+
+		
+				var num=213;
+				document.write("<br/>"+"To convert a number to a string with base 8"+"<br/>"+"Output : " + num.toString(8) +"<br/>"+"<br/>");
+    			
+    			var str = "Welcome To Javascript Tutorial ";
+    			var res = str.toString();
+    			document.write("<br/>"+"string toString()"+"<br/>"+"Output :" +  res );
+
+    			var courses = ["HTML", "CSS", "BOOTSTRAP", "JAVASCRIPT"];
+     			courses.toString();
+         		document.write("<br/>"+"<br/>"+"Array toString()"+"<br/>"+"Output :" +  courses );
+
+         		var Javascript = true;
+    			var x = Javascript.toString()
+    			document.write("<br/>"+"<br/>"+"Boolean toString()"+"<br/>"+"Output :" +  typeof x );
+
+
+    			var  x = 5;{  
+    				let x = 2;
+ 				}
+				document.write("<br/>"+"<br/>"+"Variables declared with the let keyword can have Block Scope."+"<br/>"+"Output :" + x );
+
+				let i = 15;
+				for (let i = 0; i < 10; i++) {
+    
+				}
+				document.write("<br/>"+"<br/>"+"let in loop"+"<br/>"+"Output :" + i );
+
+				let y = 2; {
+   	 				let y = 3;   
+				}
+				{
+   	 				let y = 4;   
+				}
+				document.write("<br/>"+"<br/>"+"Redeclaring a let variable with let, in the same scope, or in the same block, is not allowed:"+"<br/>"+"Output :" + y );
+				
+              
+</script>
+</body>
+</html>

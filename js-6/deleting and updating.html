@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+Fruit:
+<input type="text" id="fruit-select" value="Orange"/>
+<button onclick="addFruit(selectedFruit());updateOutput();">Add</button>
+<button onclick="removeFruit(selectedFruit());updateOutput();">Remove</button>
+<p id="output">Apples, Pears, Pineapples</p>
+<script>
+var fruits = ['Apples', 'Pears', 'Pineapples'];
+function addFruit(fruit) {
+  fruits.push(fruit);
+}
+function removeFruit(fruit) {
+  var i = fruits.indexOf(fruit);
+  if (i > -1) {fruits.splice(i, 1);}else{alert(fruit + ' cannot be removed, as it is not present in the array of fruits.');}
+}
+function selectedFruit() {
+  return document.getElementById('fruit-select').value;
+}
+function updateOutput() {
+  document.getElementById('output').innerHTML = fruits.join(', ');
+}
+</script>
+</body>
+</html>

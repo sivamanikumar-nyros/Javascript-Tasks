@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Js Prototypes & Inheritance Concepts</title>
+			<style type="text/css">
+        		table {
+            		border: 5px solid black;
+            		background-color: grey;
+            		color: black;
+            		width: 100%;
+            		margin-top: 3%;
+        		}
+        
+        		th {
+            		border: 5px solid white;
+        		}
+        
+        		td {
+            		border: 3px solid black;
+            		padding: 10px;
+        		}
+        
+        		body {
+            		background-color: lightblue;
+        		}
+        
+        
+        
+        		button {
+            		background-color: blue;
+            		color: white;
+        		}
+    		</style>
+		</head>
+		<body>
+			<h1>Please click to see the output....</h1>
+			<p> witch:"i will get you, my pretty...and your little dog, too!";<h4>counting no.of l's in witch</h4></p>
+			<hr>
+			<p>scarecrow:"Well,some people without brains do an awful lot of talking don't they?"<h4>counting no.of o's in scarecrow</h4></p>
+			<hr>
+			<p>dorothy:"There's no place like home." <h4>counting no.of k's in dorothy</h4></p>
+			<hr>
+			<p>glinda:"Be gone! Before someone drops a house on you!" <h4>counting no.of h's in glinda</h4></p>
+			<hr>
+			<p>lion:"Come on, get up and fight, you shivering junkyard!" <h4>counting no.of h's in lion</h4></p>
+			<hr>
+			<p>wizard:"Do not arouse the wrath of the great and powerful Oz!" <h4>counting no.of o's in wizard</h4></p>
+			<hr>
+			<p>tinman:"Now I know I have a heart, because it's breaking." <h4>counting no.of h's tinman</h4></p>
+			<hr>
+
+			<script type="text/javascript">
+				function myResult(){
+					var witch = "I'll get you, my pretty...and your little dog, too!" ; 
+					var scarecrow ="Well,some people without brains do an awful lot of talking don't they?" ; 
+					var dorothy = "There's no place like home." ; 
+					var glinda = "Be gone! Before someone drops a house on you!" ; 
+					var lion = "Come on, get up and fight, you shivering junkyard!" ; 
+					var wizard = "Do not arouse the wrath of the great and powerful Oz!" ; 
+					var tinman = "Now I know I have a heart, because it's breaking.";
+
+				
+
+				
+					String.prototype.countAll = function ( letter ){
+   						var letterCount = 0;
+   							for (var i = 0; i<this.length; i++) {
+         						if ( this.charAt(i).toUpperCase() == letter.toUpperCase()) {
+         					
+         						letterCount++;
+							}
+   						}
+   						return letterCount;
+					};
+					var witch=witch.countAll("l");
+					document.getElementById("witch").innerHTML= witch;
+					var scarecrow=scarecrow.countAll("o");
+					document.getElementById("scarecrow").innerHTML= scarecrow;
+					var lion=lion.countAll("k");
+					document.getElementById("lion").innerHTML= lion;
+					var dorothy=dorothy.countAll("k");
+					document.getElementById("dorothy").innerHTML=dorothy;
+					var glinda=glinda.countAll("h");
+					document.getElementById("glinda").innerHTML=glinda;
+				
+					var wizard=wizard.countAll("o");
+					document.getElementById("wizard").innerHTML=wizard;
+					var tinman=tinman.countAll("h");
+					document.getElementById("tinman").innerHTML=tinman;
+				}
+			</script>
+			
+				<button onclick="myResult()">click</button>
+			
+				<table>
+        			<th>witch</th>
+        			<th>scarecrow</th>
+        			<th>lion</th>
+        			<th>dorothy</th>
+        			<th>glinda</th>
+        			<th>wizard</th>
+        			<th>tinman</th>
+        
+        			<tbody>
+            			<tr>
+                			<td id="witch"></td>
+                			<td id="scarecrow"></td>
+                			<td id="lion"></td>
+                			<td id="dorothy"></td>
+                			<td id="glinda"></td>
+                			<td id="wizard"></td>
+                			<td id="tinman"></td>
+                		</tr>
+        			</tbody>
+    			</table>
+		</body>
+	</html>
